@@ -1,22 +1,15 @@
 ﻿using Richasy.Helper.UWP;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Resources;
+using WorkTimer.Models.Core;
 using WorkTimer.Models.Enums;
+using WorkTimer.Models.UI;
 
 namespace WorkTimer
 {
@@ -30,12 +23,14 @@ namespace WorkTimer
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public static Instance _instance = new Instance("WorkTimer");
+        public static AppViewModel _vm = new AppViewModel();
         public App()
         {
             this.InitializeComponent();
             ChangeLanguage();
             this.Suspending += OnSuspending;
-            string theme = App._instance.App.GetLocalSetting(Settings.Theme, Current.RequestedTheme.ToString());
+            CustomXamlResourceLoader.Current = new CustomResourceLoader();
+            string theme = _instance.App.GetLocalSetting(Settings.Theme, Current.RequestedTheme.ToString());
             RequestedTheme = theme == "Light" ? ApplicationTheme.Light : ApplicationTheme.Dark;
             UnhandledException += UnhandleExceptionHandle;
         }
@@ -43,6 +38,7 @@ namespace WorkTimer
         private void UnhandleExceptionHandle(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
         {
             e.Handled = true;
+            _vm.ShowPopup(e.Message, true);
         }
         /// <summary>
         /// 更改语言首选项

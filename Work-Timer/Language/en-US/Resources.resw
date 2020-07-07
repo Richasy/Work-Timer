@@ -120,4 +120,31 @@
   <data name="AppName" xml:space="preserve">
     <value>Work Timer</value>
   </data>
+  <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
+    <value>Work Timer</value>
+  </data>
+  <data name="Tip_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Tip_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Tip_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Tip_FieldEmpty" xml:space="preserve">
+    <value>Please complete the fields</value>
+  </data>
+  <data name="Tip_FolderDialogDescription" xml:space="preserve">
+    <value>You can create different folders to categorize the timing in different scenarios. Just add an icon and give it an easily recognizable name</value>
+  </data>
+  <data name="Tip_FolderDialogTitle" xml:space="preserve">
+    <value>Timer Folder</value>
+  </data>
+  <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
+    <value>Added timing to history</value>
+  </data>
+  <data name="Tip_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
 </root>

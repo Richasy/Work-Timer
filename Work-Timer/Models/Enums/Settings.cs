@@ -10,6 +10,8 @@ namespace WorkTimer.Models.Enums
     {
         Theme,
         AppVersion,
-        Language
+        Language,
+        FontFamily,
+        LastSelectFolderId
     }
 }

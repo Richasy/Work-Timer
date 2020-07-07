@@ -120,4 +120,31 @@
   <data name="AppName" xml:space="preserve">
     <value>工作计时器</value>
   </data>
+  <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
+    <value>工作计时器</value>
+  </data>
+  <data name="Tip_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Tip_Confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="Tip_Default" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="Tip_FieldEmpty" xml:space="preserve">
+    <value>请将字段填写完整</value>
+  </data>
+  <data name="Tip_FolderDialogDescription" xml:space="preserve">
+    <value>您可以创建不同的分组，以便对不同情景下的计时进行分类。只需添加一个图标，并起一个易识别的名字</value>
+  </data>
+  <data name="Tip_FolderDialogTitle" xml:space="preserve">
+    <value>计时器分组</value>
+  </data>
+  <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
+    <value>已将计时添加到历史记录</value>
+  </data>
+  <data name="Tip_Warning" xml:space="preserve">
+    <value>提醒</value>
+  </data>
 </root>

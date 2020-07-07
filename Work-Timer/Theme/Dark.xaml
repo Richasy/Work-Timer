@@ -1,0 +1,52 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WorkTimer.Theme">
+    <AcrylicBrush x:Key="SideBackground" BackgroundSource="HostBackdrop" TintColor="#282828" FallbackColor="#282828" TintOpacity="0.7"/>
+    <AcrylicBrush x:Key="PaneBackground" BackgroundSource="Backdrop" TintColor="#282828" FallbackColor="#282828" TintOpacity="0.9"/>
+    <AcrylicBrush x:Key="PopupBackground" BackgroundSource="Backdrop" TintColor="#1C1C1C" FallbackColor="#1C1C1C" TintOpacity="0.8"/>
+    <AcrylicBrush x:Key="MaskAcrylicBackground" BackgroundSource="Backdrop" TintColor="#282828" FallbackColor="#282828" TintOpacity="0.4"/>
+    <AcrylicBrush x:Key="PageBackground" BackgroundSource="HostBackdrop" TintColor="#282828" FallbackColor="#282828" TintOpacity="0.7"/>
+    <SolidColorBrush x:Key="PageOverBackground" Color="#0D0D0D"/>
+    <SolidColorBrush x:Key="CardBackground" Color="#282828"/>
+    <SolidColorBrush x:Key="CardBackgroundOver" Color="#393939"/>
+    <SolidColorBrush x:Key="PointerOverMaskBackground" Color="White" Opacity="0.05"/>
+    <SolidColorBrush x:Key="TransparentBackground" Color="Black" Opacity="0.01"/>
+
+    <SolidColorBrush x:Key="ImportantTextColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="NormalTextColor" Color="#E2E2E5"/>
+    <SolidColorBrush x:Key="TipTextColor" Color="#828492"/>
+    <SolidColorBrush x:Key="MaskTextColor" Color="#3D4469"/>
+
+    <SolidColorBrush x:Key="LineColor" Color="#3F4567"/>
+    <SolidColorBrush x:Key="LineColorOver" Color="#57608F"/>
+
+    <Color x:Key="ShadowColor">#111111</Color>
+
+    <SolidColorBrush x:Key="ProgressColor" Color="#000000" Opacity="0.45"/>
+    <SolidColorBrush x:Key="ScreenMaskColor" Color="Black" Opacity="0.3"/>
+
+    <SolidColorBrush x:Key="PrimaryColorOpacity" Color="#4AC8FC" Opacity="0.1"/>
+    <LinearGradientBrush x:Key="PrimaryColor" StartPoint="0,0" EndPoint="1,1">
+        <GradientStopCollection>
+            <GradientStop Color="#4AC8FC" Offset="0"/>
+            <GradientStop Color="#1D79EB" Offset="1"/>
+        </GradientStopCollection>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="PrimaryColorOver" Color="#1D79EB"/>
+    <SolidColorBrush x:Key="SecondaryColorOpacity" Color="#D485EF" Opacity="0.2"/>
+    <LinearGradientBrush x:Key="SecondaryColor" StartPoint="0,0" EndPoint="1,1">
+        <GradientStopCollection>
+            <GradientStop Color="#D485EF" Offset="0"/>
+            <GradientStop Color="#AA2DD1" Offset="1"/>
+        </GradientStopCollection>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="SecondaryColorOver" Color="#AA2DD1"/>
+
+    <SolidColorBrush x:Key="SuccessColorOpacity" Color="#99B42D" Opacity="0.2"/>
+    <SolidColorBrush x:Key="SuccessColor" Color="#ADC744"/>
+    <SolidColorBrush x:Key="SuccessColorOver" Color="#A1BD2F"/>
+    <SolidColorBrush x:Key="ErrorColor" Color="#F63340"/>
+    <SolidColorBrush x:Key="ErrorColorOpacity" Color="#F63340" Opacity="0.2"/>
+    <SolidColorBrush x:Key="ErrorColorOver" Color="#E32528"/>
+</ResourceDictionary>
