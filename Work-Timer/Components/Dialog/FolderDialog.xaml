@@ -12,7 +12,7 @@
     <ContentDialog.Resources>
         <DataTemplate x:DataType="enums:FeatherSymbol" x:Key="SymbolItemTemplate">
             <Grid Padding="5">
-                <uwp:FeatherIcon Symbol="{Binding}" FontSize="13"/>
+                <uwp:FeatherIcon Symbol="{Binding}" FontSize="18"/>
             </Grid>
         </DataTemplate>
         <Flyout x:Name="SymbolFlyout" FlyoutPresenterStyle="{StaticResource NoPaddingFlyoutStyle}"
@@ -20,10 +20,10 @@
             <controls:AdaptiveGridView ItemTemplate="{StaticResource SymbolItemTemplate}"
                                        ItemContainerStyle="{StaticResource BasicGridViewItemContainerStyle}"
                                        ItemsSource="{x:Bind SymbolCollection}"
-                                       Style="{StaticResource BasicGridView}" MaxWidth="210"
+                                       Style="{StaticResource BasicGridView}" MaxWidth="250"
                                        DesiredWidth="50" StretchContentForSingleRow="False"
                                        IsItemClickEnabled="True" ItemClick="SymbolGridView_ItemClick"
-                                       x:Name="SymbolGridView" Height="210"
+                                       x:Name="SymbolGridView" Height="230"
                                        />
         </Flyout>
     </ContentDialog.Resources>

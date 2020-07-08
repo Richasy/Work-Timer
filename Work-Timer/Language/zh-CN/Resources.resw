@@ -129,8 +129,14 @@
   <data name="Control_DarkComboItem.Content" xml:space="preserve">
     <value>暗色主题</value>
   </data>
+  <data name="Control_FolderSelectionTipBlock.Text" xml:space="preserve">
+    <value>您可以将该计时器历史记录转移至其它分组，在下方的下拉框中选择目标分组</value>
+  </data>
   <data name="Control_FolderTipBlock.Text" xml:space="preserve">
     <value>计时器分组</value>
+  </data>
+  <data name="Control_FollowSystemComboItem.Content" xml:space="preserve">
+    <value>跟随系统</value>
   </data>
   <data name="Control_FontFamilyTipBlock.Text" xml:space="preserve">
     <value>字体设置</value>
@@ -149,6 +155,9 @@
   </data>
   <data name="Control_ThemeTipBlock.Text" xml:space="preserve">
     <value>主题设置</value>
+  </data>
+  <data name="Control_TransferTipBlock.Text" xml:space="preserve">
+    <value>转移</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -177,6 +186,9 @@
   <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
     <value>已将计时添加到历史记录</value>
   </data>
+  <data name="Tip_MoveHistory" xml:space="preserve">
+    <value>转移历史记录</value>
+  </data>
   <data name="Tip_NeedOneFolder" xml:space="preserve">
     <value>至少需要一个计时器分组</value>
   </data>
@@ -188,6 +200,12 @@
   </data>
   <data name="Tip_StaticResourceRestart" xml:space="preserve">
     <value>您更改了静态资源设置，请重启应用以生效</value>
+  </data>
+  <data name="Tip_UpdateTitle" xml:space="preserve">
+    <value>更新说明</value>
+  </data>
+  <data name="Tip_Waiting" xml:space="preserve">
+    <value>等待中</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>提醒</value>

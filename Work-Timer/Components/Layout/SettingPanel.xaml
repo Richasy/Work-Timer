@@ -25,6 +25,7 @@
                           x:Name="ThemeComboBox"
                           SelectionChanged="ThemeComboBox_SelectionChanged"
                           >
+                    <ComboBoxItem x:Uid="Control_FollowSystemComboItem" Tag="System"/>
                     <ComboBoxItem x:Uid="Control_LightComboItem" Tag="Light"/>
                     <ComboBoxItem x:Uid="Control_DarkComboItem" Tag="Dark"/>
                 </ComboBox>
@@ -47,8 +48,8 @@
                           x:Name="LanguageComboBox"
                           SelectionChanged="LanguageComboBox_SelectionChanged"
                           >
-                    <ComboBoxItem Content="简体中文" Tag="zh-CN"/>
-                    <ComboBoxItem Content="English" Tag="en-US"/>
+                    <ComboBoxItem Content="简体中文" Tag="zh_CN"/>
+                    <ComboBoxItem Content="English" Tag="en_US"/>
                 </ComboBox>
             </StackPanel>
         </StackPanel>

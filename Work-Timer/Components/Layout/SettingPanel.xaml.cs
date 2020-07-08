@@ -1,4 +1,5 @@
-﻿using Richasy.Font.UWP;
+﻿using Lib.Share.Models;
+using Richasy.Font.UWP;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace WorkTimer.Components.Layout
         {
             this.InitializeComponent();
             string lan = ApplicationLanguages.PrimaryLanguageOverride.Equals("zh-CN", StringComparison.OrdinalIgnoreCase) ? "zh-Hans-CN" : "en-US";
-            var fonts = SystemFont.GetSystemFonts(lan.ToLower());
+            var fonts = SystemFont.GetSystemFonts(lan);
             fonts.ForEach(p => FontCollection.Add(p));
         }
 
@@ -31,7 +32,7 @@ namespace WorkTimer.Components.Layout
             if (!_isInit)
                 return;
             var item = (ThemeComboBox.SelectedItem as ComboBoxItem).Tag.ToString();
-            string oldTheme = App._instance.App.GetLocalSetting(Settings.Theme, "Light");
+            string oldTheme = App._instance.App.GetLocalSetting(Settings.Theme, StaticString.ThemeSystem);
             if (oldTheme != item)
             {
                 App._instance.App.WriteLocalSetting(Settings.Theme, item);
@@ -44,7 +45,7 @@ namespace WorkTimer.Components.Layout
             if (!_isInit)
                 return;
             var item = FontComboBox.SelectedItem as SystemFont;
-            string oldFont = App._instance.App.GetLocalSetting(Settings.FontFamily, "Microsoft YaHei UI");
+            string oldFont = App._instance.App.GetLocalSetting(Settings.FontFamily, StaticString.FontDefault);
             if (item.Name != oldFont)
             {
                 App._instance.App.WriteLocalSetting(Settings.FontFamily, item.Name);
@@ -54,11 +55,24 @@ namespace WorkTimer.Components.Layout
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            string theme = App._instance.App.GetLocalSetting(Settings.Theme, "Light");
-            ThemeComboBox.SelectedIndex = theme == "Light" ? 0 : 1;
+            string theme = App._instance.App.GetLocalSetting(Settings.Theme, StaticString.ThemeSystem);
+            switch (theme)
+            {
+                case StaticString.ThemeSystem:
+                    ThemeComboBox.SelectedIndex = 0;
+                    break;
+                case StaticString.ThemeLight:
+                    ThemeComboBox.SelectedIndex = 1;
+                    break;
+                case StaticString.ThemeDark:
+                    ThemeComboBox.SelectedIndex = 2;
+                    break;
+                default:
+                    break;
+            }
             FontInit();
-            string lan = App._instance.App.GetLocalSetting(Settings.Language, "zh_CN");
-            LanguageComboBox.SelectedIndex = lan == "zh_CN" ? 0 : 1;
+            string lan = App._instance.App.GetLocalSetting(Settings.Language, StaticString.LanZh);
+            LanguageComboBox.SelectedIndex = lan == StaticString.LanZh ? 0 : 1;
             _isInit = true;
         }
         private async Task ShowRestartDialog()
@@ -75,7 +89,7 @@ namespace WorkTimer.Components.Layout
             FontComboBox.IsEnabled = false;
             if (FontCollection != null && FontCollection.Count > 0)
             {
-                string fontName = App._instance.App.GetLocalSetting(Settings.FontFamily, "Microsoft YaHei UI");
+                string fontName = App._instance.App.GetLocalSetting(Settings.FontFamily, StaticString.FontDefault);
                 var font = FontCollection.Where(p => p.Name == fontName).FirstOrDefault();
                 if (font != null)
                 {
@@ -89,8 +103,8 @@ namespace WorkTimer.Components.Layout
         {
             if (!_isInit)
                 return;
-            var item = (ThemeComboBox.SelectedItem as ComboBoxItem).Tag.ToString();
-            string oldLan = App._instance.App.GetLocalSetting(Settings.Language, "zh_CN");
+            var item = (LanguageComboBox.SelectedItem as ComboBoxItem).Tag.ToString();
+            string oldLan = App._instance.App.GetLocalSetting(Settings.Language, StaticString.LanZh);
             if (oldLan != item)
             {
                 App._instance.App.WriteLocalSetting(Settings.Language, item);

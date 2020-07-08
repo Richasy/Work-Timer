@@ -1,6 +1,7 @@
 ﻿using Lib.Share.Models;
 using System;
 using Windows.UI.Xaml.Controls;
+using WorkTimer.Components.Dialog;
 using WorkTimer.Models.Core;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
@@ -31,6 +32,13 @@ namespace WorkTimer.Components.Layout
         {
             var item = (sender as MenuFlyoutItem).Tag as HistoryItem;
             await vm.RemoveHistory(item);
+        }
+
+        private async void TransferItem_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var item = (sender as MenuFlyoutItem).Tag as HistoryItem;
+            var dialog = new FolderSelectionDialog(item);
+            await dialog.ShowAsync();
         }
     }
 }

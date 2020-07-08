@@ -38,6 +38,12 @@
                         </interaction:ActionButton.Icon>
                         <interaction:ActionButton.Flyout>
                             <MenuFlyout MenuFlyoutPresenterStyle="{StaticResource BasicMenuFlyoutStyle}">
+                                <MenuFlyoutItem x:Uid="Control_TransferTipBlock" Style="{StaticResource BasicMenuFlyoutItemStyle}"
+                                            Click="TransferItem_Click" Tag="{Binding}">
+                                    <MenuFlyoutItem.Icon>
+                                        <uwp:FeatherIcon Symbol="Move" FontSize="15"/>
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
                                 <MenuFlyoutItem x:Uid="Control_RemoveTipBlock" Style="{StaticResource BasicMenuFlyoutItemStyle}"
                                             Click="RemoveItem_Click" Tag="{Binding}">
                                     <MenuFlyoutItem.Icon>

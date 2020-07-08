@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="WorkTimer.Components.Layout.UpdatePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WorkTimer.Components.Layout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:widgets="using:Richasy.Controls.UWP.Widgets" xmlns:uwp="using:Richasy.Font.UWP"
+    mc:Ignorable="d" Loaded="UserControl_Loaded"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <widgets:VersionBlock LogoUri="ms-appx:///Assets/AppLogo.png"
+                              x:Uid="Control_UpdateBlock"
+                              TitleTextStyle="{StaticResource SubtitleTextStyle}"
+                              ActionButtonStyle="{StaticResource PrimaryActionButtonStyle}"
+                              DescriptionTextStyle="{StaticResource BasicMarkdownTextBlock}"
+                              x:Name="VersionBlock"
+                              >
+            <widgets:VersionBlock.ActionIcon>
+                <uwp:FeatherIcon Symbol="X" FontSize="14"/>
+            </widgets:VersionBlock.ActionIcon>
+        </widgets:VersionBlock>
+    </Grid>
+</UserControl>

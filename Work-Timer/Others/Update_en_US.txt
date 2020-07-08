@@ -1,0 +1,9 @@
+﻿You have updated to the new version of 《Working Timer》
+
+The application is a simple timing tool, and only one timer can exist at a time.
+
+In the new version, you can create a folder on the left side (click the button in the lower left corner to call out) to classify the timer.
+
+You can check the timer history of the current folder on the right (click the button in the lower right corner to call out).
+
+There is no *pause* in the timer. Once stopped, it will be recorded under the currently selected folder. You can view the currently selected folder name at the bottom of the interface.

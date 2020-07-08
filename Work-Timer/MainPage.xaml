@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:interaction="using:Richasy.Controls.UWP.Interaction" xmlns:uwp="using:Richasy.Font.UWP" xmlns:layout="using:WorkTimer.Components.Layout" xmlns:layout1="using:Richasy.Controls.UWP.Layout"
     mc:Ignorable="d" Loaded="RichasyPage_Loaded"
+    SizeChanged="RichasyPage_SizeChanged"
     Background="{ThemeResource PageBackground}">
 
     <Grid>

@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap mp rescap">
 
   <Identity
-    Name="b9b0ecc4-d15e-46bf-ae24-787106f33101"
-    Publisher="CN=zar23"
+    Name="60520B029E250.WorkingTimer"
+    Publisher="CN=9EFA2047-A580-400B-A5B2-0C7ABB0DB5C0"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="b9b0ecc4-d15e-46bf-ae24-787106f33101" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="2f5e5ecb-0347-4e8b-aede-746186cde559" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Work-Timer</DisplayName>
-    <PublisherDisplayName>zar23</PublisherDisplayName>
+    <DisplayName>Working Timer</DisplayName>
+    <PublisherDisplayName>云之幻</PublisherDisplayName>
     <Logo>Assets\Logo\StoreLogo.png</Logo>
   </Properties>
 

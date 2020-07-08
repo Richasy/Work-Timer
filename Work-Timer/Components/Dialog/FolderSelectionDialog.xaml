@@ -1,0 +1,36 @@
+﻿<ContentDialog
+    x:Class="WorkTimer.Components.Dialog.FolderSelectionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WorkTimer.Components.Dialog"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:models="using:Lib.Share.Models" xmlns:uwp="using:Richasy.Font.UWP"
+    mc:Ignorable="d"
+    Style="{StaticResource BasicDialogStyle}"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+    <ContentDialog.Resources>
+        <DataTemplate x:DataType="models:FolderItem" x:Key="FolderItemTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <uwp:FeatherIcon Symbol="{x:Bind Icon}" FontSize="17" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource BodyTextStyle}" VerticalAlignment="Center"
+                           Grid.Column="1" Margin="10,0,0,0" Text="{x:Bind Name}"/>
+            </Grid>
+        </DataTemplate>
+    </ContentDialog.Resources>
+    <Grid MaxWidth="350">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource SmallTextStyle}" x:Uid="Control_FolderSelectionTipBlock"/>
+        <ComboBox Margin="0,15,0,0" Style="{StaticResource BasicComboBoxStyle}"
+                  ItemTemplate="{StaticResource FolderItemTemplate}"
+                  ItemsSource="{x:Bind FolderCollection}"
+                  x:Name="FolderComboBox" Grid.Row="1" HorizontalAlignment="Stretch"/>
+    </Grid>
+</ContentDialog>

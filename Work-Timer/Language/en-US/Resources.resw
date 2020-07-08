@@ -129,8 +129,14 @@
   <data name="Control_DarkComboItem.Content" xml:space="preserve">
     <value>Dark</value>
   </data>
+  <data name="Control_FolderSelectionTipBlock.Text" xml:space="preserve">
+    <value>You can transfer the timer history to other folder, select the target folder in the combo box below</value>
+  </data>
   <data name="Control_FolderTipBlock.Text" xml:space="preserve">
     <value>Timer Folder</value>
+  </data>
+  <data name="Control_FollowSystemComboItem.Content" xml:space="preserve">
+    <value>System</value>
   </data>
   <data name="Control_FontFamilyTipBlock.Text" xml:space="preserve">
     <value>Font</value>
@@ -149,6 +155,9 @@
   </data>
   <data name="Control_ThemeTipBlock.Text" xml:space="preserve">
     <value>Theme</value>
+  </data>
+  <data name="Control_TransferTipBlock.Text" xml:space="preserve">
+    <value>Transfer</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -177,6 +186,9 @@
   <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
     <value>Added timing to history</value>
   </data>
+  <data name="Tip_MoveHistory" xml:space="preserve">
+    <value>Transfer History</value>
+  </data>
   <data name="Tip_NeedOneFolder" xml:space="preserve">
     <value>At least one timer folder is required</value>
   </data>
@@ -188,6 +200,12 @@
   </data>
   <data name="Tip_StaticResourceRestart" xml:space="preserve">
     <value>You changed the static resource settings, please restart the application to take effect</value>
+  </data>
+  <data name="Tip_UpdateTitle" xml:space="preserve">
+    <value>Update Information</value>
+  </data>
+  <data name="Tip_Waiting" xml:space="preserve">
+    <value>Waiting</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>Warning</value>

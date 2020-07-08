@@ -90,6 +90,7 @@ namespace WorkTimer
 
         private async void RichasyPage_Loaded(object sender, RoutedEventArgs e)
         {
+            vm.CheckUpdate();
             await App._vm.Init();
         }
 
@@ -107,6 +108,26 @@ namespace WorkTimer
                 VisualStateManager.GoToState(this, "Compact", false);
             }
                 
+        }
+
+        private void RichasyPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double width = e.NewSize.Width;
+            if (width > 1300)
+            {
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactInline;
+                SubSplitView.DisplayMode = SplitViewDisplayMode.CompactInline;
+            }
+            else if (width > 900)
+            {
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                SubSplitView.DisplayMode = SplitViewDisplayMode.CompactInline;
+            }
+            else
+            {
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                SubSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            }
         }
     }
 }

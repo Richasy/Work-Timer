@@ -1,4 +1,5 @@
-﻿using Richasy.Helper.UWP;
+﻿using Lib.Share.Models;
+using Richasy.Helper.UWP;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -22,7 +23,7 @@ namespace WorkTimer
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
-        public static Instance _instance = new Instance("WorkTimer");
+        public static Instance _instance = new Instance(StaticString.AppName);
         public static AppViewModel _vm = new AppViewModel();
         public App()
         {
@@ -30,8 +31,11 @@ namespace WorkTimer
             ChangeLanguage();
             this.Suspending += OnSuspending;
             CustomXamlResourceLoader.Current = new CustomResourceLoader();
-            string theme = _instance.App.GetLocalSetting(Settings.Theme, Current.RequestedTheme.ToString());
-            RequestedTheme = theme == "Light" ? ApplicationTheme.Light : ApplicationTheme.Dark;
+            string theme = _instance.App.GetLocalSetting(Settings.Theme, StaticString.ThemeSystem);
+            if (theme != StaticString.ThemeSystem)
+            {
+                RequestedTheme = theme == StaticString.ThemeLight ? ApplicationTheme.Light : ApplicationTheme.Dark;
+            }
             UnhandledException += UnhandleExceptionHandle;
         }
 
@@ -55,26 +59,26 @@ namespace WorkTimer
                     var language = Languages[0];
                     if (language.ToLower().IndexOf("zh") != -1)
                     {
-                        _instance.App.WriteLocalSetting(Settings.Language, "zh_CN");
+                        _instance.App.WriteLocalSetting(Settings.Language, StaticString.LanZh);
                     }
                     else
                     {
-                        _instance.App.WriteLocalSetting(Settings.Language, "en_US");
+                        _instance.App.WriteLocalSetting(Settings.Language, StaticString.LanEn);
                     }
                 }
                 else
                 {
-                    _instance.App.WriteLocalSetting(Settings.Language, "zh_CN");
+                    _instance.App.WriteLocalSetting(Settings.Language, StaticString.LanEn);
                 }
             }
-            lan = _instance.App.GetLocalSetting(Settings.Language, "zh_CN");
+            lan = _instance.App.GetLocalSetting(Settings.Language, StaticString.LanEn);
             string code = "";
             switch (lan)
             {
-                case "zh_CN":
+                case StaticString.LanZh:
                     code = "zh-CN";
                     break;
-                case "en_US":
+                case StaticString.LanEn:
                     code = "en-US";
                     break;
                 default:
@@ -99,7 +103,7 @@ namespace WorkTimer
         private void OnLaunchedOrActivated(IActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            _instance = new Instance("WorkTimer");
+            _instance = new Instance(StaticString.AppName);
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)

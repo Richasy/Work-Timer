@@ -21,6 +21,9 @@ namespace WorkTimer.Models.Enums
         ConfirmRemoveHistory,
         StaticResourceRestart,
         RestartNow,
-        Settings
+        Settings,
+        UpdateTitle,
+        Waiting,
+        MoveHistory
     }
 }

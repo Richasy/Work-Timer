@@ -10,6 +10,9 @@ namespace WorkTimer.Models.Enums
     {
         DefaultActionButtonStyle,
         SubtitleTextStyle,
-        PopupHeaderButtonStyle
+        PopupHeaderButtonStyle,
+        PrimaryActionButtonStyle,
+        BasicMarkdownTextBlock,
+        BasicCenterPopupStyle
     }
 }

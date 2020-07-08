@@ -5,6 +5,7 @@ using Richasy.Font.UWP.Enums;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Windows.UI.Xaml;
 using WorkTimer.Components.Layout;
 using WorkTimer.Models.Enums;
@@ -34,6 +35,9 @@ namespace WorkTimer.Models.Core
             set
             {
                 _currentSelectedFolder = value;
+                var history = AllHistoryList.Where(p => p.FolderId == value.Id).ToList();
+                DisplayHistoryCollection.Clear();
+                history.ForEach(p => DisplayHistoryCollection.Add(p));
                 App._instance.App.WriteLocalSetting(Settings.LastSelectFolderId, value.Id);
                 CurrentSelectedFolderChanged?.Invoke(this, value);
             }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
 using WorkTimer.Components.Dialog;
@@ -137,6 +138,19 @@ namespace WorkTimer.Models.Core
             };
             await confirmDialog.ShowAsync();
         }
+        public void MoveHistory(HistoryItem source,string newFolderId)
+        {
+            foreach (var item in AllHistoryList)
+            {
+                if (item.Id == source.Id)
+                {
+                    item.FolderId = newFolderId;
+                    break;
+                }
+            }
+            DisplayHistoryCollection.Remove(source);
+            _isHistoryListChanged = true;
+        }
         public async Task SaveData()
         {
             if (_isFolderListChanged)
@@ -171,13 +185,37 @@ namespace WorkTimer.Models.Core
                 {
                     SettingPopup.Hide();
                 };
-                SettingPopup.PopupBackground = App._instance.App.GetThemeBrushFromResource(ColorName.MaskBackground);
-                SettingPopup.PopupMaxWidth = 350;
-                SettingPopup.PresenterBackground = App._instance.App.GetThemeBrushFromResource(ColorName.CardBackground);
-                SettingPopup.ShadowColor = (Color)Application.Current.Resources["ShadowColor"];
-                SettingPopup.CornerRadius = new CornerRadius(5);
+                SettingPopup.Style = App._instance.App.GetStyleFromResource(StyleName.BasicCenterPopupStyle);
             }
             SettingPopup.Show();
+        }
+
+        public async void CheckUpdate()
+        {
+            string localVersion = App._instance.App.GetLocalSetting(Settings.AppVersion, "");
+            if (localVersion != VersionBlock.Version)
+            {
+                var main = new VersionBlock();
+                main.Title = App._instance.App.GetLocalizationTextFromResource(LanguageName.UpdateTitle);
+                string lan = App._instance.App.GetLocalSetting(Settings.Language, "zh_CN");
+                var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Others/Update_{lan}.txt"));
+                string content = await FileIO.ReadTextAsync(file);
+                main.Description = content;
+                main.LogoUri = "ms-appx:///Assets/AppLogo.png";
+                main.ActionButtonStyle = App._instance.App.GetStyleFromResource(StyleName.PrimaryActionButtonStyle);
+                main.ActionIcon = new FeatherIcon(FeatherSymbol.X);
+                main.TitleTextStyle = App._instance.App.GetStyleFromResource(StyleName.SubtitleTextStyle);
+                main.DescriptionTextStyle = App._instance.App.GetStyleFromResource(StyleName.BasicMarkdownTextBlock);
+                var popup = new CenterPopup(App._instance);
+                popup.Style = App._instance.App.GetStyleFromResource(StyleName.BasicCenterPopupStyle);
+                popup.Main = main;
+                main.ActionButtonClick += (_s, _e) =>
+                {
+                    popup.Hide();
+                    App._instance.App.WriteLocalSetting(Settings.AppVersion, VersionBlock.Version);
+                };
+                popup.Show();
+            }
         }
     }
 }
