@@ -30,7 +30,7 @@
                                Margin="0,5,0,0"/>
                     </StackPanel>
                     <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}" BorderThickness="0"
-                                          Diameter="30" x:Name="MoreButton" Grid.Column="2">
+                                          Diameter="30" x:Name="MoreButton" Grid.Column="2" VerticalAlignment="Top">
                         <interaction:ActionButton.Icon>
                             <uwp:FeatherIcon Symbol="MoreVertical" FontSize="12"/>
                         </interaction:ActionButton.Icon>

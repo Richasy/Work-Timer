@@ -8,7 +8,7 @@
 
 ## 应用截图
 
-![首页](https://i.loli.net/2020/07/08/92hQZONJHzxv8tX.png)
+![首页](https://i.loli.net/2020/07/08/DFyVudr78QjXR4s.png)
 
 ## 如何安装
 
