@@ -28,4 +28,9 @@
         <Setter Property="Foreground" Value="{ThemeResource TipTextColor}" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
+    <Style x:Key="MiniTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BasicTextStyle}">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Foreground" Value="{ThemeResource TipTextColor}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
 </ResourceDictionary>

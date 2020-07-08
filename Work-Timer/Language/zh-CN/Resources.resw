@@ -120,14 +120,32 @@
   <data name="AppName" xml:space="preserve">
     <value>工作计时器</value>
   </data>
+  <data name="Control_AddFolderTipBlock.Text" xml:space="preserve">
+    <value>添加分组</value>
+  </data>
   <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
     <value>工作计时器</value>
+  </data>
+  <data name="Control_FolderTipBlock.Text" xml:space="preserve">
+    <value>计时器分组</value>
+  </data>
+  <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
+    <value>移除</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="Tip_Confirm" xml:space="preserve">
     <value>确认</value>
+  </data>
+  <data name="Tip_ConfirmRemoveFolder" xml:space="preserve">
+    <value>是否要移除该分组？该分组下的所有计时器记录都将被移除</value>
+  </data>
+  <data name="Tip_ConfirmRemoveHistory" xml:space="preserve">
+    <value>是否要移除该计时器记录？</value>
   </data>
   <data name="Tip_Default" xml:space="preserve">
     <value>默认</value>
@@ -143,6 +161,9 @@
   </data>
   <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
     <value>已将计时添加到历史记录</value>
+  </data>
+  <data name="Tip_NeedOneFolder" xml:space="preserve">
+    <value>至少需要一个计时器分组</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>提醒</value>

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using WorkTimer.Components.Dialog;
 using WorkTimer.Models.Core;
+using WorkTimer.Models.Enums;
 
 //https://go.microsoft.com/fwlink/?LinkId=234236 上介绍了“用户控件”项模板
 
@@ -27,6 +28,12 @@ namespace WorkTimer.Components.Layout
         {
             this.InitializeComponent();
             vm.FolderPanel = this;
+            vm.CurrentSelectedFolderChanged += SelectedFolder_Changed;
+        }
+
+        private void SelectedFolder_Changed(object sender, FolderItem e)
+        {
+            FolderListView.SelectedItem = e;
         }
 
         private async void AddFolderButton_Click(object sender, RoutedEventArgs e)
@@ -42,6 +49,19 @@ namespace WorkTimer.Components.Layout
             {
                 vm.CurrentSelectedFolder = folder;
             }
+        }
+
+        private async void ModifyItem_Click(object sender, RoutedEventArgs e)
+        {
+            var item = (sender as MenuFlyoutItem).Tag as FolderItem;
+            var dialog = new FolderDialog(item);
+            await dialog.ShowAsync();
+        }
+
+        private async void RemoveItem_Click(object sender, RoutedEventArgs e)
+        {
+            var item = (sender as MenuFlyoutItem).Tag as FolderItem;
+            await vm.RemoveFolder(item);
         }
     }
 }

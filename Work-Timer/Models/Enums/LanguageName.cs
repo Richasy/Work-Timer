@@ -15,6 +15,9 @@ namespace WorkTimer.Models.Enums
         Confirm,
         Cancel,
         Warning,
-        FieldEmpty
+        FieldEmpty,
+        ConfirmRemoveFolder,
+        NeedOneFolder,
+        ConfirmRemoveHistory
     }
 }

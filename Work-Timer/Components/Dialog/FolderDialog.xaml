@@ -23,11 +23,11 @@
                                        Style="{StaticResource BasicGridView}" MaxWidth="210"
                                        DesiredWidth="50" StretchContentForSingleRow="False"
                                        IsItemClickEnabled="True" ItemClick="SymbolGridView_ItemClick"
-                                       x:Name="SymbolGridView"
+                                       x:Name="SymbolGridView" Height="210"
                                        />
         </Flyout>
     </ContentDialog.Resources>
-    <Grid>
+    <Grid MaxWidth="350">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -36,7 +36,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Style="{StaticResource SmallTextStyle}" x:Name="DescriptionBlock" Margin="0,0,0,10"/>
+        <TextBlock Style="{StaticResource SmallTextStyle}" x:Name="DescriptionBlock" Margin="0,0,0,10" Grid.ColumnSpan="2"/>
         <interaction:ActionButton x:Name="IconButton" Style="{StaticResource DefaultActionButtonStyle}" Grid.Row="1"
                                   Diameter="30" VerticalAlignment="Center" Flyout="{StaticResource SymbolFlyout}">
             <interaction:ActionButton.Icon>

@@ -60,6 +60,7 @@ namespace WorkTimer.Components.Dialog
                 item.Icon = ShowIcon.Symbol;
             }
             App._vm.AddOrUpdateFolderItem(item);
+            Hide();
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)

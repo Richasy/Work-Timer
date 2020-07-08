@@ -34,6 +34,7 @@
         <Setter Property="FocusBorderBrush" Value="{ThemeResource PrimaryColor}" />
         <Setter Property="FocusForeground" Value="{ThemeResource ImportantTextColor}" />
         <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="10,5" />
     </Style>
     <DataTemplate x:Key="DialogTitle">
         <TextBlock FontWeight="Bold"
@@ -75,6 +76,11 @@
         <Setter Property="Padding" Value="0,10"/>
         <Setter Property="CornerRadius" Value="3"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+    </Style>
+    <Style TargetType="MenuFlyoutItem" x:Key="BasicMenuFlyoutItemStyle">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{ThemeResource ImportantTextColor}" />
+        <Setter Property="FontFamily" Value="{CustomResource Basic}" />
     </Style>
     <Style TargetType="ScrollBar" x:Key="BasicScrollBar">
         <Setter Property="MinWidth" Value="5" />

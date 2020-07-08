@@ -76,7 +76,7 @@
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource PrimaryColor}"/>
         <Setter Property="BackgroundSizing" Value="OuterBorderEdge"/>
-        <Setter Property="Foreground" Value="{ThemeResource PrimaryInsideColor}"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="10,5"/>

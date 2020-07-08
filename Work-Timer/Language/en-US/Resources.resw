@@ -120,14 +120,32 @@
   <data name="AppName" xml:space="preserve">
     <value>Work Timer</value>
   </data>
+  <data name="Control_AddFolderTipBlock.Text" xml:space="preserve">
+    <value>Add folder</value>
+  </data>
   <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
     <value>Work Timer</value>
+  </data>
+  <data name="Control_FolderTipBlock.Text" xml:space="preserve">
+    <value>Timer Folder</value>
+  </data>
+  <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
+    <value>Remove</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="Tip_Confirm" xml:space="preserve">
     <value>Confirm</value>
+  </data>
+  <data name="Tip_ConfirmRemoveFolder" xml:space="preserve">
+    <value>Do you want to remove the folder? All timer records in this folder will be removed</value>
+  </data>
+  <data name="Tip_ConfirmRemoveHistory" xml:space="preserve">
+    <value>Do you want to remove the timer record?</value>
   </data>
   <data name="Tip_Default" xml:space="preserve">
     <value>Default</value>
@@ -143,6 +161,9 @@
   </data>
   <data name="Tip_HasAddedHistoryItem" xml:space="preserve">
     <value>Added timing to history</value>
+  </data>
+  <data name="Tip_NeedOneFolder" xml:space="preserve">
+    <value>At least one timer folder is required</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>Warning</value>

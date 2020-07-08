@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Richasy.Font.UWP.Enums;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lib.Share.Models
 {
@@ -11,12 +9,12 @@ namespace Lib.Share.Models
         public string Name { get; set; }
         public DateTime CreateTime { get; set; }
         public string Id { get; set; }
-        public Enum Icon { get; set; }
+        public FeatherSymbol Icon { get; set; }
         public FolderItem()
         {
 
         }
-        public FolderItem(string name,Enum icon)
+        public FolderItem(string name,FeatherSymbol icon)
         {
             Name = name;
             CreateTime = DateTime.Now;

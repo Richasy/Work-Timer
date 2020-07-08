@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml;
 using WorkTimer.Components.Layout;
+using WorkTimer.Models.Enums;
 
 namespace WorkTimer.Models.Core
 {
@@ -22,12 +23,14 @@ namespace WorkTimer.Models.Core
         private FolderItem _currentSelectedFolder = null;
 
         public FolderPanel FolderPanel;
+        public HistoryPanel HistoryPanel;
         public FolderItem CurrentSelectedFolder
         {
             get => _currentSelectedFolder;
             set
             {
                 _currentSelectedFolder = value;
+                App._instance.App.WriteLocalSetting(Settings.LastSelectFolderId, value.Id);
                 CurrentSelectedFolderChanged?.Invoke(this, value);
             }
         }
@@ -43,9 +46,9 @@ namespace WorkTimer.Models.Core
                 _isTiming = value;
                 IsTimingChanged?.Invoke(this, value);
                 if (value)
-                    _durationTimer.Stop();
-                else
                     _durationTimer.Start();
+                else
+                    _durationTimer.Stop();
             }
         }
 
