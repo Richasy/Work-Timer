@@ -30,11 +30,11 @@ namespace Lib.Share.Models
             var ts = TimeSpan.FromSeconds(TotalSeconds);
             string result = "";
             if (ts.Hours > 0)
-                result += ts.Hours + "h";
+                result += ts.Hours + "h ";
             if (ts.Minutes > 0)
-                result += ts.Minutes + "m";
+                result += ts.Minutes + "m ";
             else if (ts.Hours > 0)
-                result += "00m";
+                result += "00m ";
             result += ts.Seconds.ToString("00") + "s";
             return result;
         }

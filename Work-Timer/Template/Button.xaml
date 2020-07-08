@@ -39,6 +39,9 @@
         <Setter Property="PressForeground" Value="{ThemeResource PrimaryColorOver}" />
         <Setter Property="Diameter" Value="40" />
     </Style>
+    <Style TargetType="interaction:ActionButton" x:Key="PopupHeaderButtonStyle" BasedOn="{StaticResource DefaultActionButtonStyle}">
+        <Setter Property="Diameter" Value="30" />
+    </Style>
     <Style TargetType="interaction:ActionButton" x:Key="PrimaryActionButtonStyle">
         <Setter Property="Background" Value="{ThemeResource PrimaryColor}" />
         <Setter Property="Foreground" Value="White" />

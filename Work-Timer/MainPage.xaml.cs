@@ -70,7 +70,7 @@ namespace WorkTimer
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-
+            vm.ShowSettingPopup();
         }
 
         private void StatusButton_Click(object sender, RoutedEventArgs e)

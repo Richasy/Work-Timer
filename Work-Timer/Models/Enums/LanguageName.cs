@@ -18,6 +18,9 @@ namespace WorkTimer.Models.Enums
         FieldEmpty,
         ConfirmRemoveFolder,
         NeedOneFolder,
-        ConfirmRemoveHistory
+        ConfirmRemoveHistory,
+        StaticResourceRestart,
+        RestartNow,
+        Settings
     }
 }

@@ -83,12 +83,20 @@ namespace WorkTimer
             }
             ApplicationLanguages.PrimaryLanguageOverride = code;
         }
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            OnLaunchedOrActivated(args);
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
+        {
+            OnLaunchedOrActivated(e);
+        }
+        private void OnLaunchedOrActivated(IActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
             _instance = new Instance("WorkTimer");
@@ -110,21 +118,24 @@ namespace WorkTimer
                 Window.Current.Content = rootFrame;
             }
 
-            if (e.PrelaunchActivated == false)
+            if (e is LaunchActivatedEventArgs && (e as LaunchActivatedEventArgs).PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
                 {
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigation
-                    // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(MainPage), (e as LaunchActivatedEventArgs).Arguments);
                 }
-                // Ensure the current window is active
-                Window.Current.Activate();
             }
+            else if (e is ProtocolActivatedEventArgs protocalArgs)
+            {
+                string arg = protocalArgs.Uri.Query.Replace("?", "");
+                if (rootFrame.Content == null)
+                {
+                    rootFrame.Navigate(typeof(MainPage), arg);
+                }
+            }
+            Window.Current.Activate();
             _instance.App.SetTitleBarColor();
         }
-
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>

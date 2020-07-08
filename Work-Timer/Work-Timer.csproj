@@ -131,6 +131,9 @@
     <Compile Include="Components\Layout\HistoryPanel.xaml.cs">
       <DependentUpon>HistoryPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Layout\SettingPanel.xaml.cs">
+      <DependentUpon>SettingPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,7 @@
     <Compile Include="Models\Enums\ColorName.cs" />
     <Compile Include="Models\Enums\LanguageName.cs" />
     <Compile Include="Models\Enums\Settings.cs" />
+    <Compile Include="Models\Enums\StyleName.cs" />
     <Compile Include="Models\UI\CustomResourceLoader.cs" />
     <Compile Include="Models\UI\DateTimeConverter.cs" />
     <Compile Include="Models\UI\SelectedColorConverter.cs" />
@@ -231,6 +235,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\Layout\SettingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -275,7 +283,7 @@
       <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="Richasy.Controls.UWP">
-      <Version>1.0.5</Version>
+      <Version>1.0.7</Version>
     </PackageReference>
     <PackageReference Include="Richasy.Font.UWP">
       <Version>1.0.7</Version>

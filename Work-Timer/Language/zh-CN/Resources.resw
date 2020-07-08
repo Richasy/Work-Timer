@@ -126,14 +126,29 @@
   <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
     <value>工作计时器</value>
   </data>
+  <data name="Control_DarkComboItem.Content" xml:space="preserve">
+    <value>暗色主题</value>
+  </data>
   <data name="Control_FolderTipBlock.Text" xml:space="preserve">
     <value>计时器分组</value>
+  </data>
+  <data name="Control_FontFamilyTipBlock.Text" xml:space="preserve">
+    <value>字体设置</value>
+  </data>
+  <data name="Control_LanguageTipBlock.Text" xml:space="preserve">
+    <value>语言设置</value>
+  </data>
+  <data name="Control_LightComboItem.Content" xml:space="preserve">
+    <value>亮色主题</value>
   </data>
   <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
     <value>修改</value>
   </data>
   <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
     <value>移除</value>
+  </data>
+  <data name="Control_ThemeTipBlock.Text" xml:space="preserve">
+    <value>主题设置</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -164,6 +179,15 @@
   </data>
   <data name="Tip_NeedOneFolder" xml:space="preserve">
     <value>至少需要一个计时器分组</value>
+  </data>
+  <data name="Tip_RestartNow" xml:space="preserve">
+    <value>立即重启</value>
+  </data>
+  <data name="Tip_Settings" xml:space="preserve">
+    <value>应用设置</value>
+  </data>
+  <data name="Tip_StaticResourceRestart" xml:space="preserve">
+    <value>您更改了静态资源设置，请重启应用以生效</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>提醒</value>

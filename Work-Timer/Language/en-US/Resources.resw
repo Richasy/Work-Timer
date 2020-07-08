@@ -126,14 +126,29 @@
   <data name="Control_AppNameTipBlock.Text" xml:space="preserve">
     <value>Work Timer</value>
   </data>
+  <data name="Control_DarkComboItem.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
   <data name="Control_FolderTipBlock.Text" xml:space="preserve">
     <value>Timer Folder</value>
+  </data>
+  <data name="Control_FontFamilyTipBlock.Text" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="Control_LanguageTipBlock.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Control_LightComboItem.Content" xml:space="preserve">
+    <value>Light</value>
   </data>
   <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
     <value>Modify</value>
   </data>
   <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="Control_ThemeTipBlock.Text" xml:space="preserve">
+    <value>Theme</value>
   </data>
   <data name="Tip_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -164,6 +179,15 @@
   </data>
   <data name="Tip_NeedOneFolder" xml:space="preserve">
     <value>At least one timer folder is required</value>
+  </data>
+  <data name="Tip_RestartNow" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="Tip_Settings" xml:space="preserve">
+    <value>App Settings</value>
+  </data>
+  <data name="Tip_StaticResourceRestart" xml:space="preserve">
+    <value>You changed the static resource settings, please restart the application to take effect</value>
   </data>
   <data name="Tip_Warning" xml:space="preserve">
     <value>Warning</value>

@@ -4,7 +4,7 @@
     xmlns:local="using:WorkTimer.Theme">
     <AcrylicBrush x:Key="SideBackground" BackgroundSource="HostBackdrop" TintColor="White" FallbackColor="#f9fafe" TintOpacity="0.8"/>
     <AcrylicBrush x:Key="PaneBackground" BackgroundSource="Backdrop" TintColor="White" FallbackColor="#f9fafe" TintOpacity="0.8"/>
-    <AcrylicBrush x:Key="MaskAcrylicBackground" BackgroundSource="Backdrop" TintColor="White" FallbackColor="#f9fafe" TintOpacity="0.4"/>
+    <SolidColorBrush x:Key="MaskBackground" Color="White" Opacity="0.6"/>
     <SolidColorBrush x:Key="PopupBackground" Color="#f2f7fd"/>
     <AcrylicBrush x:Key="PageBackground" BackgroundSource="HostBackdrop" TintColor="White" FallbackColor="#f9fafe" TintOpacity="0.8"/>
     <SolidColorBrush x:Key="PageOverBackground" Color="#DEE5EB"/>
@@ -24,7 +24,6 @@
     <SolidColorBrush x:Key="LineColorOver" Color="#D9D9D9"/>
 
     <SolidColorBrush x:Key="ProgressColor" Color="#E1E1E1" Opacity="0.4"/>
-    <SolidColorBrush x:Key="ScreenMaskColor" Color="White" Opacity="0.5"/>
 
     <SolidColorBrush x:Key="PrimaryColorOpacity" Color="#4AC8FC" Opacity="0.1"/>
     <LinearGradientBrush x:Key="PrimaryColor" StartPoint="0,0" EndPoint="1,1">

@@ -1,18 +1,17 @@
 ﻿using Lib.Share.Models;
-using Microsoft.Toolkit.Uwp.Helpers;
 using Newtonsoft.Json;
 using Richasy.Controls.UWP.Popups;
+using Richasy.Controls.UWP.Widgets;
+using Richasy.Font.UWP;
 using Richasy.Font.UWP.Enums;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.Storage;
+using Windows.UI;
 using Windows.UI.Xaml;
 using WorkTimer.Components.Dialog;
+using WorkTimer.Components.Layout;
 using WorkTimer.Models.Enums;
 
 namespace WorkTimer.Models.Core
@@ -154,6 +153,31 @@ namespace WorkTimer.Models.Core
             var popup = new TipPopup(App._instance, msg);
             ColorName color = isError ? ColorName.ErrorColor : ColorName.PrimaryColor;
             popup.Show(color);
+        }
+
+        public void ShowSettingPopup()
+        {
+            if (SettingPopup == null)
+            {
+                var header = new CenterPopupHeader();
+                header.Padding = new Thickness(20, 10, 20, 10);
+                header.Title = App._instance.App.GetLocalizationTextFromResource(LanguageName.Settings);
+                header.CloseButtonStyle = App._instance.App.GetStyleFromResource(StyleName.PopupHeaderButtonStyle);
+                header.TitleTextStyle = App._instance.App.GetStyleFromResource(StyleName.SubtitleTextStyle);
+                header.CloseIcon = new FeatherIcon(FeatherSymbol.X) { FontSize = 13 };
+                var settingPanel = new SettingPanel();
+                SettingPopup = CenterPopup.CreatePopup(App._instance, header, settingPanel);
+                header.CloseButtonClick += (_s, _e) =>
+                {
+                    SettingPopup.Hide();
+                };
+                SettingPopup.PopupBackground = App._instance.App.GetThemeBrushFromResource(ColorName.MaskBackground);
+                SettingPopup.PopupMaxWidth = 350;
+                SettingPopup.PresenterBackground = App._instance.App.GetThemeBrushFromResource(ColorName.CardBackground);
+                SettingPopup.ShadowColor = (Color)Application.Current.Resources["ShadowColor"];
+                SettingPopup.CornerRadius = new CornerRadius(5);
+            }
+            SettingPopup.Show();
         }
     }
 }

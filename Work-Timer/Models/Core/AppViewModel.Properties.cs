@@ -1,4 +1,6 @@
 ﻿using Lib.Share.Models;
+using Richasy.Controls.UWP.Popups;
+using Richasy.Font.UWP;
 using Richasy.Font.UWP.Enums;
 using System;
 using System.Collections.Generic;
@@ -24,6 +26,8 @@ namespace WorkTimer.Models.Core
 
         public FolderPanel FolderPanel;
         public HistoryPanel HistoryPanel;
+
+        public CenterPopup SettingPopup;
         public FolderItem CurrentSelectedFolder
         {
             get => _currentSelectedFolder;
@@ -61,6 +65,7 @@ namespace WorkTimer.Models.Core
         public static readonly DependencyProperty DurationTextProperty =
             DependencyProperty.Register("DurationText", typeof(string), typeof(AppViewModel), new PropertyMetadata("00:00:00"));
 
+             
         public ObservableCollection<FeatherSymbol> SymbolCollection = new ObservableCollection<FeatherSymbol>
         {
             FeatherSymbol.Activity,FeatherSymbol.Airplay,

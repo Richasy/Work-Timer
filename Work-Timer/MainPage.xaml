@@ -5,12 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WorkTimer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:interaction="using:Richasy.Controls.UWP.Interaction" xmlns:uwp="using:Richasy.Font.UWP" xmlns:layout="using:WorkTimer.Components.Layout"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:interaction="using:Richasy.Controls.UWP.Interaction" xmlns:uwp="using:Richasy.Font.UWP" xmlns:layout="using:WorkTimer.Components.Layout" xmlns:layout1="using:Richasy.Controls.UWP.Layout"
     mc:Ignorable="d" Loaded="RichasyPage_Loaded"
     Background="{ThemeResource PageBackground}">
 
-    <SplitView x:Name="MainSplitView" DisplayMode="CompactOverlay" CompactPaneLength="0"
-               OpenPaneLength="350" PaneBackground="{ThemeResource PaneBackground}">
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="Common">
                 <VisualState x:Name="Default"/>
@@ -22,109 +21,113 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <SplitView.Pane>
-            <Grid Padding="20,15,20,0">
-                <layout:FolderPanel/>
-            </Grid>
-        </SplitView.Pane>
-        <SplitView.Content>
-            <SplitView x:Name="SubSplitView" PanePlacement="Right" DisplayMode="CompactOverlay"
+        <SplitView x:Name="MainSplitView" DisplayMode="CompactOverlay" CompactPaneLength="0"
+               OpenPaneLength="350" PaneBackground="{ThemeResource PaneBackground}">
+            <SplitView.Pane>
+                <Grid Padding="20,15,20,0">
+                    <layout:FolderPanel/>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <SplitView x:Name="SubSplitView" PanePlacement="Right" DisplayMode="CompactOverlay"
                        OpenPaneLength="350" PaneBackground="{ThemeResource PaneBackground}" CompactPaneLength="0">
-                <SplitView.Pane>
-                    <Grid Padding="20,15,20,0">
-                        <layout:HistoryPanel/>
-                    </Grid>
-                </SplitView.Pane>
-                <SplitView.Content>
-                    <Grid Padding="40,25">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
+                    <SplitView.Pane>
+                        <Grid Padding="20,15,20,0">
+                            <layout:HistoryPanel/>
+                        </Grid>
+                    </SplitView.Pane>
+                    <SplitView.Content>
+                        <Grid Padding="40,25">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
-                        <Grid x:Name="HeaderContainer">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <controls:ImageEx Source="ms-appx:///Assets/AppLogo.png" Width="36" Height="36"
+                            <Grid x:Name="HeaderContainer">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <controls:ImageEx Source="ms-appx:///Assets/AppLogo.png" Width="36" Height="36"
                               DecodePixelWidth="36" VerticalAlignment="Center"/>
-                                <TextBlock x:Uid="Control_AppNameTipBlock" Style="{StaticResource SubtitleTextStyle}"
+                                    <TextBlock x:Uid="Control_AppNameTipBlock" Style="{StaticResource SubtitleTextStyle}"
                        Margin="10,0,0,0" VerticalAlignment="Center"/>
-                            </StackPanel>
-                            <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}"
+                                </StackPanel>
+                                <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}"
                                   x:Name="SettingButton" Click="SettingButton_Click"
                                   Grid.Column="1" VerticalAlignment="Center">
-                                <interaction:ActionButton.Icon>
-                                    <uwp:FeatherIcon Symbol="Settings" FontSize="14"/>
-                                </interaction:ActionButton.Icon>
-                            </interaction:ActionButton>
-                        </Grid>
+                                    <interaction:ActionButton.Icon>
+                                        <uwp:FeatherIcon Symbol="Settings" FontSize="14"/>
+                                    </interaction:ActionButton.Icon>
+                                </interaction:ActionButton>
+                            </Grid>
 
-                        <Grid Grid.Row="1">
-                            <Viewbox StretchDirection="Both" HorizontalAlignment="Center" MaxWidth="750"
+                            <Grid Grid.Row="1">
+                                <Viewbox StretchDirection="Both" HorizontalAlignment="Center" MaxWidth="750"
                      VerticalAlignment="Center">
-                                <Grid Width="750">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Style="{StaticResource HeaderTextStyle}" x:Name="DurationBlock"
+                                    <Grid Width="650">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Style="{StaticResource HeaderTextStyle}" x:Name="DurationBlock"
                                Text="{x:Bind vm.DurationText,Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
-                                    <interaction:ActionButton Style="{StaticResource SecondaryActionButtonStyle}"
+                                        <interaction:ActionButton Style="{StaticResource SecondaryActionButtonStyle}"
                                               Diameter="65" FontSize="30" x:Name="StatusButton"
                                               Click="StatusButton_Click" Margin="0,30"
                                               Grid.Row="1" HorizontalAlignment="Center">
-                                        <interaction:ActionButton.Icon>
-                                            <uwp:FeatherIcon Symbol="Play" x:Name="StatusIcon" FontSize="25"/>
-                                        </interaction:ActionButton.Icon>
-                                    </interaction:ActionButton>
-                                    <interaction:ExtraTextBox Style="{StaticResource TrasparentTextBoxStyle}" x:Name="TitleBox" Padding="20,10"
+                                            <interaction:ActionButton.Icon>
+                                                <uwp:FeatherIcon Symbol="Play" x:Name="StatusIcon" FontSize="25"/>
+                                            </interaction:ActionButton.Icon>
+                                        </interaction:ActionButton>
+                                        <interaction:ExtraTextBox Style="{StaticResource TrasparentTextBoxStyle}" x:Name="TitleBox" Padding="20,10"
                                HorizontalAlignment="Center" Grid.Row="2" FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
-                                    <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}" Diameter="50"
+                                        <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}" Diameter="50"
                                                               BorderThickness="0" x:Name="CompactButton" HorizontalAlignment="Center"
                                                               Click="CompactButton_Click" Grid.Row="3" Margin="0,25,0,0">
-                                        <interaction:ActionButton.Icon>
-                                            <uwp:FeatherIcon Symbol="Layout" FontSize="22"/>
-                                        </interaction:ActionButton.Icon>
-                                    </interaction:ActionButton>
-                                </Grid>
-                            </Viewbox>
-                        </Grid>
+                                            <interaction:ActionButton.Icon>
+                                                <uwp:FeatherIcon Symbol="Layout" FontSize="22"/>
+                                            </interaction:ActionButton.Icon>
+                                        </interaction:ActionButton>
+                                    </Grid>
+                                </Viewbox>
+                            </Grid>
 
-                        <Grid Grid.Row="2" x:Name="FooterContainer">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <interaction:ActionButton x:Name="FolderButton" Style="{StaticResource PrimaryActionButtonStyle}"
+                            <Grid Grid.Row="2" x:Name="FooterContainer">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <interaction:ActionButton x:Name="FolderButton" Style="{StaticResource PrimaryActionButtonStyle}"
                                       Click="FolderButton_Click" VerticalAlignment="Center">
-                                <interaction:ActionButton.Icon>
-                                    <uwp:FeatherIcon Symbol="Folder" FontSize="14"/>
-                                </interaction:ActionButton.Icon>
-                            </interaction:ActionButton>
-                            <Border CornerRadius="5" Padding="15,10" BorderBrush="{ThemeResource LineColor}" BorderThickness="1"
+                                    <interaction:ActionButton.Icon>
+                                        <uwp:FeatherIcon Symbol="Folder" FontSize="14"/>
+                                    </interaction:ActionButton.Icon>
+                                </interaction:ActionButton>
+                                <Border CornerRadius="5" Padding="15,10" BorderBrush="{ThemeResource LineColor}" BorderThickness="1"
                     Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Style="{StaticResource BodyTextStyle}" x:Name="GroupNameBlock"
+                                    <TextBlock Style="{StaticResource BodyTextStyle}" x:Name="GroupNameBlock"
                            FontWeight="Bold" Foreground="{ThemeResource TipTextColor}"/>
-                            </Border>
-                            <interaction:ActionButton x:Name="HistoryButton" Style="{StaticResource SecondaryActionButtonStyle}"
+                                </Border>
+                                <interaction:ActionButton x:Name="HistoryButton" Style="{StaticResource SecondaryActionButtonStyle}"
                                       Click="HistoryButton_Click"  VerticalAlignment="Center" Grid.Column="2">
-                                <interaction:ActionButton.Icon>
-                                    <uwp:FeatherIcon Symbol="List" FontSize="14"/>
-                                </interaction:ActionButton.Icon>
-                            </interaction:ActionButton>
+                                    <interaction:ActionButton.Icon>
+                                        <uwp:FeatherIcon Symbol="List" FontSize="14"/>
+                                    </interaction:ActionButton.Icon>
+                                </interaction:ActionButton>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </SplitView.Content>
-            </SplitView>
-            
-        </SplitView.Content>
-    </SplitView>
-    
+                    </SplitView.Content>
+                </SplitView>
+
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+
+
 </ui:RichasyPage>

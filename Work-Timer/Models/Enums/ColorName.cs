@@ -15,6 +15,8 @@ namespace WorkTimer.Models.Enums
         SecondaryColor,
         SecondaryColorOver,
         SecondaryColorOpacity,
-        ErrorColor
+        ErrorColor,
+        MaskBackground,
+        CardBackground
     }
 }
