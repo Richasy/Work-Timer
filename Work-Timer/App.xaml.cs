@@ -137,6 +137,7 @@ namespace WorkTimer
                     rootFrame.Navigate(typeof(MainPage), arg);
                 }
             }
+            
             Window.Current.Activate();
             _instance.App.SetTitleBarColor();
         }
