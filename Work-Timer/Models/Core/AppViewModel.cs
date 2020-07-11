@@ -60,18 +60,19 @@ namespace WorkTimer.Models.Core
             {
                 AllHistoryList = historyList;
                 historyList.Where(p => p.FolderId == lastSelectedFolderId).ToList().ForEach(p=>DisplayHistoryCollection.Add(p));
+                HistoryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
         public async Task SaveFolderList()
         {
-            _isFolderListChanged = false;
+            IsFolderListChanged = false;
             List<FolderItem> folderList = new List<FolderItem>();
             folderList = FolderCollection.ToList();
             await App._instance.IO.SetLocalDataAsync(StaticString.FolderListFileName, JsonConvert.SerializeObject(folderList));
         }
         public async Task SaveHistoryList()
         {
-            _isHistoryListChanged = false;
+            IsHistoryListChanged = false;
             await App._instance.IO.SetLocalDataAsync(StaticString.HistoryListFileName, JsonConvert.SerializeObject(AllHistoryList));
         }
         private async void ChangeTimer_Tick(object sender, object e)
@@ -86,7 +87,7 @@ namespace WorkTimer.Models.Core
             DurationText = "00:00:00";
             BeginStamp = DateTime.MinValue;
             ShowPopup(LanguageName.HasAddedHistoryItem);
-            _isHistoryListChanged = true;
+            IsHistoryListChanged = true;
         }
         public void AddOrUpdateFolderItem(FolderItem item)
         {
@@ -97,12 +98,12 @@ namespace WorkTimer.Models.Core
                 FolderCollection.Insert(sourceIndex, item);
                 if (CurrentSelectedFolder != null && CurrentSelectedFolder.Equals(item))
                     CurrentSelectedFolderChanged?.Invoke(this, item);
-                _isFolderListChanged = true;
+                IsFolderListChanged = true;
             }
             else
             {
                 FolderCollection.Add(item);
-                _isFolderListChanged = true;
+                IsFolderListChanged = true;
             }
         }
         public async Task RemoveFolder(FolderItem item)
@@ -122,8 +123,8 @@ namespace WorkTimer.Models.Core
                     var first = FolderCollection.First();
                     CurrentSelectedFolder = first;
                 }
-                _isFolderListChanged = true;
-                _isHistoryListChanged = true;
+                IsFolderListChanged = true;
+                IsHistoryListChanged = true;
             };
             await confirmDialog.ShowAsync();
         }
@@ -134,7 +135,7 @@ namespace WorkTimer.Models.Core
             {
                 AllHistoryList.Remove(item);
                 DisplayHistoryCollection.Remove(item);
-                _isHistoryListChanged = true;
+                IsHistoryListChanged = true;
             };
             await confirmDialog.ShowAsync();
         }
@@ -149,13 +150,13 @@ namespace WorkTimer.Models.Core
                 }
             }
             DisplayHistoryCollection.Remove(source);
-            _isHistoryListChanged = true;
+            IsHistoryListChanged = true;
         }
         public async Task SaveData()
         {
-            if (_isFolderListChanged)
+            if (IsFolderListChanged)
                 await SaveFolderList();
-            if (_isHistoryListChanged)
+            if (IsHistoryListChanged)
                 await SaveHistoryList();
         }
         public void ShowPopup(LanguageName name,bool isError = false)

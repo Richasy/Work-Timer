@@ -10,7 +10,7 @@
   <Identity
     Name="60520B029E250.WorkingTimer"
     Publisher="CN=9EFA2047-A580-400B-A5B2-0C7ABB0DB5C0"
-    Version="1.0.3.0" />
+    Version="1.0.4.0" />
 
   <mp:PhoneIdentity PhoneProductId="2f5e5ecb-0347-4e8b-aede-746186cde559" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

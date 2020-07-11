@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>Work Timer</value>
   </data>
+  <data name="Control_ActualDurationTipBlock.Text" xml:space="preserve">
+    <value>Work Duration</value>
+  </data>
   <data name="Control_AddFolderTipBlock.Text" xml:space="preserve">
     <value>Add folder</value>
   </data>
@@ -149,6 +152,12 @@
   </data>
   <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
     <value>Modify</value>
+  </data>
+  <data name="Control_OpenSourceTipBlock.Text" xml:space="preserve">
+    <value>Open source link</value>
+  </data>
+  <data name="Control_PresetDurationTipBlock.Text" xml:space="preserve">
+    <value>Preset Duration</value>
   </data>
   <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
     <value>Remove</value>

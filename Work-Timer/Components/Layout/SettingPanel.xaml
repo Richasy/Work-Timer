@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WorkTimer.Components.Layout"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:font="using:Richasy.Font.UWP"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:font="using:Richasy.Font.UWP" xmlns:interaction="using:Richasy.Controls.UWP.Interaction"
     mc:Ignorable="d" Loaded="UserControl_Loaded"
     d:DesignHeight="300"
     d:DesignWidth="400">
@@ -51,6 +51,34 @@
                     <ComboBoxItem Content="简体中文" Tag="zh_CN"/>
                     <ComboBoxItem Content="English" Tag="en_US"/>
                 </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="0,15,0,0">
+                <TextBlock Style="{StaticResource SmallTextStyle}" x:Uid="Control_PresetDurationTipBlock"
+                           Margin="0,0,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <interaction:NumberBox Minimum="1" Maximum="1440" Step="30" ValueChanged="PresetDurationBox_ValueChanged"
+                                       BoxWidth="130" x:Name="PresetDurationBox" HorizontalAlignment="Left"
+                                       TextBoxStyle="{StaticResource BasicTextBoxStyle}">
+                        <interaction:NumberBox.UpButtonIcon>
+                            <font:FeatherIcon Symbol="ChevronUp"/>
+                        </interaction:NumberBox.UpButtonIcon>
+                        <interaction:NumberBox.DownButtonIcon>
+                            <font:FeatherIcon Symbol="ChevronDown"/>
+                        </interaction:NumberBox.DownButtonIcon>
+                    </interaction:NumberBox>
+                    <TextBlock Style="{StaticResource SmallTextStyle}" Margin="10,0,0,0" VerticalAlignment="Center"
+                               Text="m"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0,15,0,0">
+                <TextBlock Style="{StaticResource SmallTextStyle}" x:Uid="Control_OpenSourceTipBlock"
+                           Margin="0,0,0,5"/>
+                <interaction:IconButton HorizontalAlignment="Left" Style="{StaticResource PrimaryExtraButtonStyle}"
+                                        x:Uid="Control_OpenSourceTipBlock" x:Name="OpenSourceButton" Click="OpenSourceButton_Click">
+                    <interaction:IconButton.Icon>
+                        <font:FeatherIcon Symbol="Github" FontSize="14"/>
+                    </interaction:IconButton.Icon>
+                </interaction:IconButton>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -12,6 +12,7 @@ namespace WorkTimer.Models.Enums
         AppVersion,
         Language,
         FontFamily,
-        LastSelectFolderId
+        LastSelectFolderId,
+        PresetDuration
     }
 }

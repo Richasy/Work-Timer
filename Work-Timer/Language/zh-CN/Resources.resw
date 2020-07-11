@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>工作计时器</value>
   </data>
+  <data name="Control_ActualDurationTipBlock.Text" xml:space="preserve">
+    <value>工作时长</value>
+  </data>
   <data name="Control_AddFolderTipBlock.Text" xml:space="preserve">
     <value>添加分组</value>
   </data>
@@ -149,6 +152,12 @@
   </data>
   <data name="Control_ModifyTipBlock.Text" xml:space="preserve">
     <value>修改</value>
+  </data>
+  <data name="Control_OpenSourceTipBlock.Text" xml:space="preserve">
+    <value>开源地址</value>
+  </data>
+  <data name="Control_PresetDurationTipBlock.Text" xml:space="preserve">
+    <value>预设时长</value>
   </data>
   <data name="Control_RemoveTipBlock.Text" xml:space="preserve">
     <value>移除</value>

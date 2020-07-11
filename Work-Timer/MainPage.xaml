@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WorkTimer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:interaction="using:Richasy.Controls.UWP.Interaction" xmlns:uwp="using:Richasy.Font.UWP" xmlns:layout="using:WorkTimer.Components.Layout" xmlns:layout1="using:Richasy.Controls.UWP.Layout"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:interaction="using:Richasy.Controls.UWP.Interaction" xmlns:uwp="using:Richasy.Font.UWP" xmlns:layout="using:WorkTimer.Components.Layout" xmlns:layout1="using:Richasy.Controls.UWP.Layout" xmlns:widget="using:WorkTimer.Components.Widget"
     mc:Ignorable="d" Loaded="RichasyPage_Loaded"
     SizeChanged="RichasyPage_SizeChanged"
     Background="{ThemeResource PageBackground}">
@@ -74,22 +74,25 @@
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
-                                        <TextBlock Style="{StaticResource HeaderTextStyle}" x:Name="DurationBlock"
+                                        <TextBlock Style="{StaticResource BodyTextStyle}" x:Name="GroupNameBlock"
+                           FontWeight="Bold" Foreground="{ThemeResource TipTextColor}" HorizontalAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource HeaderTextStyle}" x:Name="DurationBlock" Grid.Row="1" Margin="0,25,0,0"
                                Text="{x:Bind vm.DurationText,Mode=OneWay}" HorizontalAlignment="Center" TextAlignment="Center"/>
                                         <interaction:ActionButton Style="{StaticResource SecondaryActionButtonStyle}"
                                               Diameter="65" FontSize="30" x:Name="StatusButton"
                                               Click="StatusButton_Click" Margin="0,30"
-                                              Grid.Row="1" HorizontalAlignment="Center">
+                                              Grid.Row="2" HorizontalAlignment="Center">
                                             <interaction:ActionButton.Icon>
                                                 <uwp:FeatherIcon Symbol="Play" x:Name="StatusIcon" FontSize="25"/>
                                             </interaction:ActionButton.Icon>
                                         </interaction:ActionButton>
                                         <interaction:ExtraTextBox Style="{StaticResource TrasparentTextBoxStyle}" x:Name="TitleBox" Padding="20,10"
-                               HorizontalAlignment="Center" Grid.Row="2" FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
+                               HorizontalAlignment="Center" Grid.Row="3" FontSize="22" FontWeight="Bold" TextAlignment="Center"/>
                                         <interaction:ActionButton Style="{StaticResource DefaultActionButtonStyle}" Diameter="50"
                                                               BorderThickness="0" x:Name="CompactButton" HorizontalAlignment="Center"
-                                                              Click="CompactButton_Click" Grid.Row="3" Margin="0,25,0,0">
+                                                              Click="CompactButton_Click" Grid.Row="4" Margin="0,25,0,0">
                                             <interaction:ActionButton.Icon>
                                                 <uwp:FeatherIcon Symbol="Layout" FontSize="22"/>
                                             </interaction:ActionButton.Icon>
@@ -110,11 +113,7 @@
                                         <uwp:FeatherIcon Symbol="Folder" FontSize="14"/>
                                     </interaction:ActionButton.Icon>
                                 </interaction:ActionButton>
-                                <Border CornerRadius="5" Padding="15,10" BorderBrush="{ThemeResource LineColor}" BorderThickness="1"
-                    Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Style="{StaticResource BodyTextStyle}" x:Name="GroupNameBlock"
-                           FontWeight="Bold" Foreground="{ThemeResource TipTextColor}"/>
-                                </Border>
+                                <widget:WorkDurationBlock Grid.Column="1" HorizontalAlignment="Center"/>
                                 <interaction:ActionButton x:Name="HistoryButton" Style="{StaticResource SecondaryActionButtonStyle}"
                                       Click="HistoryButton_Click"  VerticalAlignment="Center" Grid.Column="2">
                                     <interaction:ActionButton.Icon>

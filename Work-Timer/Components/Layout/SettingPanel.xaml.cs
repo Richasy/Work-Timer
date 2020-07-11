@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.Globalization;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using WorkTimer.Components.Dialog;
@@ -73,6 +74,8 @@ namespace WorkTimer.Components.Layout
             FontInit();
             string lan = App._instance.App.GetLocalSetting(Settings.Language, StaticString.LanZh);
             LanguageComboBox.SelectedIndex = lan == StaticString.LanZh ? 0 : 1;
+            string presetDuration = App._instance.App.GetLocalSetting(Settings.PresetDuration, "360");
+            PresetDurationBox.Value = Convert.ToDouble(presetDuration);
             _isInit = true;
         }
         private async Task ShowRestartDialog()
@@ -110,6 +113,19 @@ namespace WorkTimer.Components.Layout
                 App._instance.App.WriteLocalSetting(Settings.Language, item);
                 await ShowRestartDialog();
             }
+        }
+
+        private void PresetDurationBox_ValueChanged(object sender, double e)
+        {
+            if (!_isInit)
+                return;
+            App._instance.App.WriteLocalSetting(Settings.PresetDuration, e.ToString());
+            App._vm.WorkDurationBlock.UpdatePresetDuration();
+        }
+
+        private async void OpenSourceButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("https://github.com/Richasy/Work-Timer"));
         }
     }
 }

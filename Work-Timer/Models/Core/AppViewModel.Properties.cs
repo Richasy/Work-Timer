@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI.Xaml;
 using WorkTimer.Components.Layout;
+using WorkTimer.Components.Widget;
 using WorkTimer.Models.Enums;
 
 namespace WorkTimer.Models.Core
@@ -17,16 +18,28 @@ namespace WorkTimer.Models.Core
         public ObservableCollection<FolderItem> FolderCollection = new ObservableCollection<FolderItem>();
         public ObservableCollection<HistoryItem> DisplayHistoryCollection = new ObservableCollection<HistoryItem>();
         public List<HistoryItem> AllHistoryList = new List<HistoryItem>();
-        private bool _isFolderListChanged = false;
-        private bool _isHistoryListChanged = false;
+        private bool IsFolderListChanged = false;
+        private bool _isHisotryListChanged = false;
+        private bool IsHistoryListChanged
+        {
+            get => _isHisotryListChanged;
+            set
+            {
+                if (value)
+                    HistoryChanged?.Invoke(this, EventArgs.Empty);
+                _isHisotryListChanged = value;
+            }
+        }
         private DispatcherTimer _changeTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(10) };
         private DispatcherTimer _durationTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(0.5) };
 
         public event EventHandler<FolderItem> CurrentSelectedFolderChanged;
+        public event EventHandler HistoryChanged;
         private FolderItem _currentSelectedFolder = null;
 
         public FolderPanel FolderPanel;
         public HistoryPanel HistoryPanel;
+        public WorkDurationBlock WorkDurationBlock;
 
         public CenterPopup SettingPopup;
         public FolderItem CurrentSelectedFolder
