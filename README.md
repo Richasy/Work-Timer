@@ -1,3 +1,23 @@
+> [!IMPORTANT]
+> ### 🌱 Rewritten with Sprout → moved to **[Richasy/Rodel.Timer](https://github.com/Richasy/Rodel.Timer)**
+>
+> **Working Timer** has been fully rewritten on the self‑drawn Fluent UI framework
+> **[Sprout](https://github.com/Richasy/Sprout)** and now lives at **[Richasy/Rodel.Timer](https://github.com/Richasy/Rodel.Timer)** —
+> keeping the same Microsoft Store identity while replacing the old UWP UI with a NativeAOT, fully self‑drawn Fluent
+> shell and an enhanced experience (window materials, folders & history, a compact overlay, live localization, and
+> accessibility). Install or update from the **[Microsoft Store](https://apps.microsoft.com/detail/9N71W9G714RK)**.
+>
+> ---
+>
+> **工作计时器** 已使用全新的自绘 Fluent UI 框架 **[Sprout](https://github.com/Richasy/Sprout)** 完整重写，并迁移至新仓库
+> **[Richasy/Rodel.Timer](https://github.com/Richasy/Rodel.Timer)**：保留原有的正向计时工作流与**同一 Microsoft Store 应用标识**，
+> 把旧的 UWP 界面替换为完全自绘、以 NativeAOT 单文件发布的 Fluent 外壳，并增强了主题与材质、文件夹与历史、紧凑悬浮窗、实时本地化与无障碍体验。
+> 从 **[Microsoft Store](https://apps.microsoft.com/detail/9N71W9G714RK)** 安装或更新即可（与本应用同一标识，老用户原地升级、数据自动保留）。
+>
+> 本仓库为旧版 UWP 实现，仅作存档保留、不再维护；以下为旧版说明。
+
+---
+
 ![applogo](https://i.loli.net/2020/07/08/hBNLW5H7YlJfqZF.png)
 
 # 工作计时器
@@ -12,7 +32,7 @@
 
 ## 如何安装
 
-应用已在微软应用商店上架，您可以访问 [微软应用商店](https://www.microsoft.com/store/productId/9N71W9G714RK) 进行下载。
+应用已在微软应用商店上架，您可以访问 [微软应用商店](https://apps.microsoft.com/detail/9N71W9G714RK) 进行下载。
 
 应用要求您的系统为：**Windows 10 ver.1809** 及以上。
 
